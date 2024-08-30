@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orders</title>
+    <link rel="shortcut icon" href="./images/food-favicon.png" type="image/x-icon">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/4876bfe495.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Navbar.css">
+    
+    <style>
+        .card-custom-margin {
+          margin: 10px;
+          border-radius: 30px;
+          box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1) !important;
+          padding: 0px !important;
+        }
+
+      .card-body {
+        overflow: hidden; /* Hide overflow content */
+        text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+        white-space: nowrap; /* Prevent text wrapping */
+      }
+
+      .card-body .card-text {
+        height: 20px; 
+        overflow: hidden;
+      }
+
+      .btn-primary {
+        margin-top: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .card-body {
+          height: auto; /* Adjust height for smaller screens */
+          white-space: normal;
+        }
+      }
+
+      .order-img{
+        width: 150px;
+        height: 150px;
+      }
+
+  .loader {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-size: 10px;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    /* position: relative; */
+    text-indent: -9999em;
+    animation: mulShdSpin 1.1s infinite ease;
+    transform: translateZ(0);
+  }
+@keyframes mulShdSpin {
+  0%,
+  100% {
+    box-shadow: 0em -2.6em 0em 0em black, 
+                1.8em -1.8em 0 0em rgba(0, 0, 0, 0.7), 
+                2.5em 0em 0 0em rgba(0, 0, 0, 0.5), 
+                1.75em 1.75em 0 0em rgba(0, 0, 0, 0.3), 
+                0em 2.5em 0 0em rgba(0, 0, 0, 0.2), 
+                -1.8em 1.8em 0 0em rgba(0, 0, 0, 0.2), 
+                -2.6em 0em 0 0em rgba(0, 0, 0, 0.3), 
+                -1.8em -1.8em 0 0em rgba(0, 0, 0, 0.5);
+  }
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(0, 0, 0, 0.5), 
+                1.8em -1.8em 0 0em black, 
+                2.5em 0em 0 0em rgba(0, 0, 0, 0.7), 
+                1.75em 1.75em 0 0em rgba(0, 0, 0, 0.3), 
+                0em 2.5em 0 0em rgba(0, 0, 0, 0.2), 
+                -1.8em 1.8em 0 0em rgba(0, 0, 0, 0.2), 
+                -2.6em 0em 0 0em rgba(0, 0, 0, 0.3), 
+                -1.8em -1.8em 0 0em rgba(0, 0, 0, 0.3);
+  }
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(0, 0, 0, 0.3), 
+                1.8em -1.8em 0 0em rgba(0, 0, 0, 0.5), 
+                2.5em 0em 0 0em black, 
+                1.75em 1.75em 0 0em rgba(0, 0, 0, 0.7), 
+                0em 2.5em 0 0em rgba(0, 0, 0, 0.5), 
+                -1.8em 1.8em 0 0em rgba(0, 0, 0, 0.3), 
+                -2.6em 0em 0 0em rgba(0, 0, 0, 0.2), 
+                -1.8em -1.8em 0 0em rgba(0, 0, 0, 0.2);
+  }
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(0, 0, 0, 0.2), 
+                1.8em -1.8em 0 0em rgba(0, 0, 0, 0.3), 
+                2.5em 0em 0 0em rgba(0, 0, 0, 0.5), 
+                1.75em 1.75em 0 0em rgba(0, 0, 0, 0.7), 
+                0em 2.5em 0 0em black, 
+                -1.8em 1.8em 0 0em rgba(0, 0, 0, 0.3), 
+                -2.6em 0em 0 0em rgba(0, 0, 0, 0.2), 
+                -1.8em -1.8em 0 0em rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(0, 0, 0, 0.2), 
+                1.8em -1.8em 0 0em rgba(0, 0, 0, 0.3), 
+                2.5em 0em 0 0em rgba(0, 0, 0, 0.5), 
+                1.75em 1.75em 0 0em rgba(0, 0, 0, 0.7), 
+                0em 2.5em 0 0em black, 
+                -1.8em 1.8em 0 0em rgba(0, 0, 0, 0.5), 
+                -2.6em 0em 0 0em rgba(0, 0, 0, 0.7), 
+                -1.8em -1.8em 0 0em black;
+  }
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(0, 0, 0, 0.7), 
+                1.8em -1.8em 0 0em rgba(0, 0, 0, 0.5), 
+                2.5em 0em 0 0em rgba(0, 0, 0, 0.3), 
+                1.75em 1.75em 0 0em rgba(0, 0, 0, 0.2), 
+                0em 2.5em 0 0em rgba(0, 0, 0, 0.2), 
+                -1.8em 1.8em 0 0em rgba(0, 0, 0, 0.3), 
+                -2.6em 0em 0 0em rgba(0, 0, 0, 0.5), 
+                -1.8em -1.8em 0 0em black;
+  }
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(0, 0, 0, 0.5), 
+                1.8em -1.8em 0 0em rgba(0, 0, 0, 0.7), 
+                2.5em 0em 0 0em rgba(0, 0, 0, 0.3), 
+                1.75em 1.75em 0 0em rgba(0, 0, 0, 0.2), 
+                0em 2.5em 0 0em rgba(0, 0, 0, 0.2), 
+                -1.8em 1.8em 0 0em rgba(0, 0, 0, 0.5), 
+                -2.6em 0em 0 0em black, 
+                -1.8em -1.8em 0 0em rgba(0, 0, 0, 0.2);
+  }
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(0, 0, 0, 0.3), 
+                1.8em -1.8em 0 0em rgba(0, 0, 0, 0.5), 
+                2.5em 0em 0 0em rgba(0, 0, 0, 0.7), 
+                1.75em 1.75em 0 0em black, 
+                0em 2.5em 0 0em rgba(0, 0, 0, 0.5), 
+                -1.8em 1.8em 0 0em rgba(0, 0, 0, 0.7), 
+                -2.6em 0em 0 0em rgba(0, 0, 0, 0.3), 
+                -1.8em -1.8em 0 0em black;
+  }
+}
+
+
+      
+
+  </style>
+  </head>
+
+  <body>
+    <div>
+      <nav>
+        <div class="logo-name">
+          <img style="padding-left:30px !important;padding-top: 20px;" width="150" src="images/logo.png" alt="">
+      </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="./dashboard.html">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Dahsboard</span>
+                </a></li>
+                <li><a href="./restaurants.html">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span class="link-name">Restaurants</span>
+                </a></li>
+                <li><a href="./add-dishes.html">
+                    <i class="uil uil-chart"></i>
+                    <span class="link-name">Dishes</span>
+                </a></li>
+                <li><a href="./orders.html">
+                    <i class="uil uil-thumbs-up"></i>
+                    <span class="link-name">Orders</span>
+                </a></li>
+            </ul>
+            
+            <ul class="logout-mode">
+                <li><a href="#">
+                    <i class="uil uil-signout"></i>
+                    <span id="logoutBtn"  class="link-name">Logout</span>
+                    <!-- <button id="logoutBtn" class="btn btn-outline-primary" type="submit">Logout</button> -->
+
+                </a></li>
+
+                <li class="mode">
+                    <a href="#">
+                        <i class="uil uil-moon"></i>
+                    <span class="link-name">Dark Mode</span>
+                </a>
+
+                <div class="mode-toggle">
+                  <span class="switch"></span>
+                </div>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+
+            <div class="search-box">
+                <i id="searchButton" class="uil uil-search"></i>
+                <input type="text" placeholder="Search Items" class="form-control" id="searchInput">
+            </div>
+            <div class="d-flex align-items-center justify-content-between">
+                <!-- <img src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png" alt="">
+                <p>Shoaib Raza</p> -->
+                <img style="border-radius: 50px;" width="40px" src="" id="user-img" alt="">
+                <p style="margin-top: 20px; margin-left: 10px;" id="user-name"></p>
+            </div>
+        </div>
+
+        <div class="dash-content">
+            <div class="overview">
+                <div class="title d-flex justify-content-between">
+                    <!-- <i class="uil uil-tachometer-fast-alt"></i> -->
+                    <span class="text">Customers Orders</span>
+                </div>
+
+
+      <div id="page-spinner" class="p-5 text-center">
+        <center><div class="loader" role="status"></center>
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <div style="display: none" id="main-content">
+        <div class="row row-cols-1 row-cols-md-2 g-4 px-2 py-4">
+          <div class="d-flex justify-content-between align-items-center">
+            <h2 id="heading-color">Orders</h2>
+          </div>
+        </div>
+
+        <div class="row px-2 py-4">
+          <table class="table">
+            <tbody class="row m-3" id="all-orders"></tbody>
+          </table>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Order details
+              </h1>
+              <button
+                id="close-btn"
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="card text-center">
+                <div id="cart" class="card-body"></div>
+                <select
+                  id="orderStatus"
+                  class="form-select"
+                  aria-label="Default select example"
+                >
+                  <option selected>Select status</option>
+                  <option value="pending">Pending</option>
+                  <option value="delivered">Delivered</option>
+                </select>
+                <br />
+                <div id="totalAmountModal" class="text-align-right">vip</div>
+                <button id="updateOrder" class="btn btn-primary">
+                  Update order
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/order.js" type="module"></script>
+    <script src="./script.js"></script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

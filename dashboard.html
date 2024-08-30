@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashbaord</title>
+    <link rel="shortcut icon" href="./images/food-favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/4876bfe495.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Navbar.css">
+    <style>
+        .card-custom-margin {
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .card-color {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .card:hover {
+            border: 3.5px solid #ff9a9e;
+            border-radius: 20px 20px 12px 12px;
+        }
+
+        .card-color h5, .card-color p {
+            color: white;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .discount {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #ff4757;
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .time-dish {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff4757;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .card-img-top {
+            border-radius: 15px 15px 0 0;
+            object-fit: cover;
+        }
+
+        .btn-primary {
+            background-color: #ff6b81 !important;
+            border-color: #ff4757;
+            font-weight: bold;
+            width: 100%;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff4757;
+            border-color: #ff6b81;
+        }                
+
+        @media (max-width:576px) {
+
+
+        .time-dish {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #ff4757;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 0.5rem;
+            }        
+
+            
+        .discount {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #ff4757;
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.5rem;
+            border-radius: 5px;
+        }
+            
+
+        }
+    </style>
+</head>
+
+<body>
+<div>
+
+        <nav>
+            <div class="logo-name">
+                <img style="padding-left:30px !important;padding-top: 20px;" width="150" src="images/logo.png" alt="">
+            </div>
+    
+            <div class="menu-items">
+                <ul class="nav-links">
+                    <li><a href="./dashboard.html">
+                        <i class="uil uil-estate"></i>
+                        <span class="link-name">Dahsboard</span>
+                    </a></li>
+                    <li><a href="./restaurants.html">
+                        <i class="fa-solid fa-utensils"></i>
+                        <span class="link-name">Restaurants</span>
+                    </a></li>
+                    <li><a href="./add-dishes.html">
+                        <i class="uil uil-chart"></i>
+                        <span class="link-name">Dishes</span>
+                    </a></li>
+                    <li><a href="./orders.html">
+                        <i class="uil uil-thumbs-up"></i>
+                        <span class="link-name">Orders</span>
+                    </a></li>
+                </ul>
+                
+                <ul class="logout-mode">
+                    <li><a href="#">
+                        <i class="uil uil-signout"></i>
+                        <span id="logoutBtn"  class="link-name">Logout</span>
+                    </a></li>
+    
+                    <li class="mode">
+                        <a href="#">
+                            <i class="uil uil-moon"></i>
+                        <span class="link-name">Dark Mode</span>
+                    </a>
+    
+                    <div class="mode-toggle">
+                      <span class="switch"></span>
+                    </div>
+                </li>
+                </ul>
+            </div>
+        </nav>
+
+        <section class="dashboard">
+            <div class="top">
+                <i class="uil uil-bars sidebar-toggle"></i>
+    
+                <div class="search-box">
+                    <i id="searchButton" class="uil uil-search"></i>
+                    <input type="text" placeholder="Search Items" class="form-control" id="searchInput">
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                    <img style="border-radius: 50px;" width="40px" src="" id="user-img" alt="">
+                    <p style="margin-top: 20px; margin-left: 10px;" id="user-name"></p>
+                </div>
+            </div>
+    
+            <div class="dash-content">
+                <div class="overview">
+                    <div class="title d-flex justify-content-between">
+                        <i class="uil uil-tachometer-fast-alt"></i>
+                        <span class="text">Dashboard</span>
+                        <button style="background-color: #198fb9;
+                        border-color: #198fb9;
+                        color: #fff;
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+                        transition: background-color 0.3s ease, border-color 0.3s ease; width: auto;" type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                          </button>
+                    </div>
+    
+                    <div class="boxes">
+                        <div class="box box1" id="restaurants-card">
+                            <i class="fa-solid fa-utensils mb-3"></i>
+                            <span class="text">
+                                <h5 class="card-title">Total Restaurants</h5>
+                            </span>
+                            <span class="card-subtitle mb-2 text-body-secondary number" id="total-restaurants"></span>
+                        </div>
+                        <div class="box box2" id="dishes-card">
+                            <i class="uil uil-comments"></i>
+                            <span class="text">
+                                <h5 class="card-title">Total Dishes</h5>
+                            </span>
+                            <span class="card-subtitle mb-2 text-body-secondary number" id="total-dishes"></span>
+                        </div>
+                        <div class="box box3" id="orders-pending-card">
+                            <i class="uil uil-share"></i>
+                            <span class="text">
+                                <h5 class="card-title">Total Orders Pending</h5>
+                            </span>
+                            <span class="card-subtitle mb-2 text-body-secondary number" id="total-orders-pending"></span>
+                        </div>
+
+                        <div class="box box3 mt-3" id="orders-delivered-card">
+                            <i class="uil uil-share"></i>
+                            <span class="text">
+                                <h5 class="card-title">Total Orders Delivered</h5>
+                            </span>
+                            <span class="card-subtitle mb-2 text-body-secondary number" id="total-orders-delivered"></span>
+                        </div>
+
+                        <div class="box box3 mt-3" id="users-card">
+                            <i class="fa-solid fa-user mb-2"></i>
+                            <span class="text">
+                                <h5 class="card-title">Total users</h5>
+                            </span>
+                            <span class="card-subtitle mb-2 text-body-secondary number" id="total-users"></span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="activity">
+                    <div class="title">
+                        <i class="uil uil-clock-three"></i>
+                        <span class="text">Recent Activity</span>
+                    </div>
+
+        <!-- Dish Details Modal -->
+            <div class="modal fade" id="dishModal" tabindex="-1" aria-labelledby="dishModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="dishModalLabel">Dish Details</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="me-3">
+                                            <img id="modal-dish-image" width="200" class="img-fluid rounded-start" src="" alt="Dish Image" />
+                                        </div>
+                                        <div class="p-2">
+                                            <h5 class="card-title" id="modal-dish-name"></h5>
+                                            <h6 class="card-title">Rs: <span id="modal-dish-price"></span></h6>
+                                            <p class="card-text">Serves: <span id="modal-dish-serving"></span></p>
+                                            <p class="card-text" id="modal-dish-description"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button style="background-color: #ff6b81;
+                            border-color: #ff4757;
+                            color: #fff;
+                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+                            transition: background-color 0.3s ease, border-color 0.3s ease; width: auto;" type="button" class="btn btn-primary" id="buyNowButton">Buy Now</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        <div style="display: flex; justify-content: right;">
+
+    <div class="modal fade" id="exampleModal" tabindex="-1"aria-labelledby="exampleModalLabel"aria-hidden="true">
+      
+       <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="d-flex justify-content-between">
+              <h1 class="modal-title fs-5 m-l-5" id="totalAmount">Total: PKR:0.00</h1>
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div id="getvalue" class="modal-body"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button style="background-color: #ff6b81;
+            border-color: #ff4757;
+            color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, border-color 0.3s ease; width: auto;" id="checkoutBtn" type="button" class="btn btn-primary">Check Out</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br>
+
+    </div>
+
+        <div id="show" class="row row-cols-1 row-cols-md-2 px-2 py-4 g-4">
+            
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 g-4 px-2 py-4 m-1">
+            <div class="col">
+                <div class="card" style="width: 24rem;" id="restaurants-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Restaurants</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary" id="total-restaurants"></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 24rem;" id="dishes-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Dishes</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary" id="total-dishes"></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 24rem;" id="orders-pending-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Orders Pending</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary" id="total-orders-pending"></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 24rem;" id="orders-delivered-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Orders Delivered</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary" id="total-orders-delivered"></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 24rem;" id="users-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Total users</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary" id="total-users"></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+    <script src="app.js" type="module"></script>
+    <script src="./js/dashboard.js" type="module"></script>
+    <script src="./script.js"></script>
+    <script type="module" src="js/index.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Include jQuery before Bootstrap's JavaScript -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>

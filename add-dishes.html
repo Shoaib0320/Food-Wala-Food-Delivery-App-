@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Dishes</title>
+    <link rel="shortcut icon" href="./images/food-favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/4876bfe495.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Navbar.css">
+    <style>
+
+.card-custom-margin {
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .card-color {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .card:hover {
+            border: 3.5px solid #ff9a9e;
+            border-radius: 20px 20px 12px 12px;
+        }
+
+        .card-color h5, .card-color p {
+            color: white;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .discount {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #ff4757;
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .time-dish {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff4757;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .card-img-top {
+            border-radius: 15px 15px 0 0;
+            object-fit: cover;
+        }
+
+        .btn-primary {
+            background-color: #ff6b81 !important;
+            border-color: #ff4757;
+            font-weight: bold;
+            width: 100%;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff4757;
+            border-color: #ff6b81;
+        }
+
+        .edit-btn .delete-btn{
+            background-color: #198fb9 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav>
+            <div class="logo-name">
+                <img style="padding-left:30px !important;padding-top: 20px;" width="150" src="images/logo.png" alt="">
+            </div>
+    
+            <div class="menu-items">
+                <ul class="nav-links">
+                    <li><a href="./dashboard.html">
+                        <i class="uil uil-estate"></i>
+                        <span class="link-name">Dishes</span>
+                    </a></li>
+                    <li><a href="./restaurants.html">
+                        <i class="fa-solid fa-utensils"></i>
+                        <span class="link-name">Restaurants</span>
+                    </a></li>
+                    <li><a href="./add-dishes.html">
+                        <i class="uil uil-chart"></i>
+                        <span class="link-name">Dishes</span>
+                    </a></li>
+                    <li><a href="./orders.html">
+                        <i class="uil uil-thumbs-up"></i>
+                        <span class="link-name">Orders</span>
+                    </a></li>
+                </ul>
+                
+                <ul class="logout-mode">
+                    <li><a href="#">
+                        <i class="uil uil-signout"></i>
+                        <span id="logoutBtn"  class="link-name">Logout</span>
+                        <!-- <button id="logoutBtn" class="btn btn-outline-primary" type="submit">Logout</button> -->
+
+                    </a></li>
+    
+                    <li class="mode">
+                        <a href="#">
+                            <i class="uil uil-moon"></i>
+                        <span class="link-name">Dark Mode</span>
+                    </a>
+    
+                    <div class="mode-toggle">
+                      <span class="switch"></span>
+                    </div>
+                </li>
+                </ul>
+            </div>
+        </nav>
+
+        <section class="dashboard">
+            <div class="top">
+                <i class="uil uil-bars sidebar-toggle"></i>
+    
+                <div class="search-box">
+                    <i id="searchButton" class="uil uil-search"></i>
+                    <input type="text" placeholder="Search Items" class="form-control" id="searchInput">
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                    <!-- <img src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png" alt="">
+                    <p>Shoaib Raza</p> -->
+                    <img style="border-radius: 50px;" width="40px" src="" id="user-img" alt="">
+                    <p style="margin-top: 20px; margin-left: 10px;" id="user-name"></p>
+                </div>
+            </div>
+    
+            <div class="dash-content">
+                <div class="overview">
+                    <div class="title d-flex justify-content-between">
+                        
+                    </div>
+      
+
+        <div class="row px-2 py-4 m-2">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2 id="heading-color">Dishes</h2>
+                <button style="width: auto;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Add-dish-modal">
+                    Add new dish <i class="fa-solid fa-plus"></i>
+                </button>
+
+        <!-- Add Dish Modal -->
+        <!-- Modal for editing dish -->
+
+        <div class="modal fade" id="Add-dish-modal"  tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New dish</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="hidden" id="dish-id">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Restaurant name</label>
+                                    <select id="restaurant-name" class="form-select"
+                                        aria-label="Default select example">
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Dish name</label>
+                                    <input type="text" class="form-control" id="dish-name" placeholder="Dish name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Dish Original price</label>
+                                    <input type="text" class="form-control" id="dish-original-price" placeholder="Dish price">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Dish Discounted price</label>
+                                    <input type="text" class="form-control" id="dish-price" placeholder="Dish price">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Dish serving</label>
+                                    <select id="dish-serving" class="form-select" aria-label="Default select example">
+                                        <option selected disabled>Select person</option>
+                                        <option value="1 person">1 person</option>
+                                        <option value="2 person">2 person</option>
+                                        <option value="3 person">3 person</option>
+                                        <option value="4 person">4 person</option>
+                                        <option value="5 person">5 person</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">Dish image</label>
+                                    <input class="form-control" type="file" id="dish-image">
+                                </div>
+                                <div class="mb-3">
+                                    <img class="slected-logo" width="100" height="100px" id="selected-logo" src="" alt="">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="close-btn" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Close</button>
+                                <button style="width: auto;" id="add-Dish" type="button" class="d-flex btn btn-primary">
+                                    <div id="dish-spinner" style="margin-right: 5px;" class="spinner-border" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Update dish</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="hidden" id="dish-id">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Restaurant name</label>
+                                    <select id="edit-restaurant-name" class="form-select"
+                                        aria-label="Default select example">
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Dish name</label>
+                                    <input type="text" class="form-control" id="edit-dish-name" placeholder="Dish name">
+                                </div>
+                                <div id="original-price-container" class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Dish Original price</label>
+                                    <input type="text" class="form-control" id="edit-dish-original-price" placeholder="Dish price">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Dish Discounted price</label>
+                                    <input type="text" class="form-control" id="edit-dish-price" placeholder="Dish price">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Dish serving</label>
+                                    <select id="edit-dish-serving" class="form-select" aria-label="Default select example">
+                                        <option selected disabled>Select person</option>
+                                        <option value="1 person">1 person</option>
+                                        <option value="2 person">2 person</option>
+                                        <option value="3 person">3 person</option>
+                                        <option value="4 person">4 person</option>
+                                        <option value="5 person">5 person</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">Dish image</label>
+                                    <input class="form-control" type="file" id="edit-dish-image">
+                                </div>
+                                <div class="mb-3">
+                                    <img class="slected-logo" width="200" height="180px" id="edit-selected-logo" src=""
+                                        alt="">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="close-btn" class="d-flex btn btn-secondary"
+                                    data-bs-dismiss="modal">Close</button>
+                                <button style="width: auto;" id="update-dish" type="button" class="btn btn-primary">
+                                     <div id="dish-spinner" style="margin-right: 5px;" class="spinner-border" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                    Update Dish
+                                </button>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+            <div class="row px-2 py-4">
+
+                <div class="row row-cols-1 row-cols-md-2 g-4 px-2 py-4" id="all-dishes"></div>
+
+            </div>
+
+
+
+       
+    </div>
+
+
+
+    <script src="./js/add-dishes.js" type="module"></script>
+    <script type="module" src="./app.js"></script>
+    <script src="./script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+
+</html>

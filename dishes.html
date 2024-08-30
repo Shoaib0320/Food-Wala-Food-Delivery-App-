@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check Out</title>
+    <link rel="shortcut icon" href="./images/food-favicon.png" type="image/x-icon">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/4876bfe495.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="loader.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="Navbar.css">
+    <style>
+
+.card-custom-margin {
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .card-color {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .card:hover {
+            border: 3.5px solid #ff9a9e;
+            border-radius: 20px 20px 12px 12px;
+        }
+
+        .card-color h5, .card-color p {
+            color: white;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .discount {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #ff4757;
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .time-dish {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff4757;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        
+
+        .card-img-top {
+            border-radius: 15px 15px 0 0;
+            object-fit: cover;
+        }
+
+        .btn-primary {
+            background-color: #ff6b81 !important;
+            border-color: #ff4757;
+            font-weight: bold;
+            width: 100%;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff4757;
+            border-color: #ff6b81;
+        }
+
+        .qty-btn{
+          background:  #ff6b81 ;
+          color: white;
+          font-weight: bold;
+          border: 1px solid #fad0c4;
+        }
+
+        .qty-btn:hover{
+          background:  #ff6b81 ;
+          color: white;
+          font-weight: bold;
+          border: 1px solid #fad0c4;
+        }
+
+        @media (max-width:576px) {
+
+
+        .time-dish {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #ff4757;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 0.5rem;
+            }        
+
+            
+        .discount {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #ff4757;
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.5rem;
+            border-radius: 5px;
+        }
+             
+          }
+
+          @media (max-width:768px) {
+
+
+        .time-dish {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #ff4757;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 0.5rem;
+            }        
+
+            
+        .discount {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #ff4757;
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.5rem;
+            border-radius: 5px;
+        }
+     
+  }
+
+
+
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <nav>
+        <div class="logo-name">
+          <img style="padding-left:30px !important;padding-top: 20px;" width="150" src="images/logo.png" alt="">
+      </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="./dashboard.html">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Dahsboard</span>
+                </a></li>
+                <li><a href="./restaurants.html">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span class="link-name">Restaurants</span>
+                </a></li>
+                <li><a href="./add-dishes.html">
+                    <i class="uil uil-chart"></i>
+                    <span class="link-name">Dishes</span>
+                </a></li>
+                <li><a href="./orders.html">
+                    <i class="uil uil-thumbs-up"></i>
+                    <span class="link-name">Orders</span>
+                </a></li>
+            </ul>
+            
+            <ul class="logout-mode">
+                <li><a href="#">
+                    <i class="uil uil-signout"></i>
+                    <span id="logoutBtn"  class="link-name">Logout</span>
+                </a></li>
+
+                <li class="mode">
+                    <a href="#">
+                        <i class="uil uil-moon"></i>
+                    <span class="link-name">Dark Mode</span>
+                </a>
+
+                <div class="mode-toggle">
+                  <span class="switch"></span>
+                </div>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+        <section class="dashboard">
+            <div class="top">
+                <i class="uil uil-bars sidebar-toggle"></i>
+    
+                <div class="search-box">
+                    <i id="searchButton" class="uil uil-search"></i>
+                    <input type="text" placeholder="Search Items" class="form-control" id="searchInput">
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                    <img style="border-radius: 50px;" width="40px" src="" id="user-img" alt="">
+                    <p style="margin-top: 20px; margin-left: 10px;" id="user-name"></p>
+                </div>
+            </div>
+
+            <br>
+            <br>
+    
+
+    <div id="page-spinner" class="container">
+        <div class="circular-progress">
+            <span class="progress-value">0%</span>
+        </div>
+    </div>
+
+      <div class="mt-5" style="display: none" id="main-content">
+        <div class="row m-3 card-width">
+          <div class="cols-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <div class="mb-4">
+                      <img
+                        id="res-image"
+                        width="300px"
+                        src="https://www.xbytesolutions.com/assets/img/food-delivery-app/hero-screen.png"
+                        alt=""
+                      />
+                    </div>
+                    <h5 class="card-title" id="res-name">Saylani Foods</h5>
+                    <p class="card-text" id="res-address"></p>
+                    <div id="badges-container"></div>
+                  </div>
+                </div>
+                <div class="cols-12 col-lg-4 col-md-8 col-sm-12 d-flex m-5 gap-4 socail-icons">
+                  <i class="fa-brands fa-facebook"></i>
+                  <i class="fa-brands fa-instagram"></i>
+                  <i class="fa-brands fa-youtube"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+
+        <div class="row px-2 py-4">
+          <div id="all-dishes" class="row px-2 py-4"></div>
+          <div class="cols-12">
+            <div class="card text-center">
+              <div class="card-header text-bold font-weight-bold">
+                <b>Cart</b>
+              </div>
+              <div id="cart" class="card-body"></div>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                Checkout
+              </button>
+              <!-- Modal -->
+              <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 id="checkout-button" class="modal-title fs-5" id="exampleModalLabel">
+                        Checkout
+                      </h1>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body text-start">
+                      <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label"
+                          >Name</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="customerName"
+                          placeholder="Enter name"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label"
+                          >Contact number</label
+                        >
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="customerContact"
+                          placeholder="Enter contact number"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label"
+                          >Address</label
+                        >
+                        <textarea
+                          class="form-control"
+                          id="customerAddress"
+                          rows="3"
+                        ></textarea>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                        <span>Delivery charges:</span>
+                        <span class="fw-bold" id="deliveryCharges">Rs 100 /-</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span>Total amount:</span>
+                        <span class="fw-bold" id="totalAmount">Rs 343 /-</span>
+                    </div>
+                    
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        id="closeBtn"
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button style="width: auto;" id="placeOrder" class="btn btn-primary">
+                        Place order
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/dishes.js" type="module"></script>
+    <script src="./js/order.js" type="module"></script>
+    <script type="module" src="./app.js"></script>
+    <script src="./script.js"></script>
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>
