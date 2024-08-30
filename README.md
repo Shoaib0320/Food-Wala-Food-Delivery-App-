@@ -36,4 +36,4 @@ Installation
 Clone the repository:
 
 
-git clone https://github.com/your-username/food-wala.git
+git clone https://github.com/Shoaib0320/Food-Wala-Food-Delivery-App-
