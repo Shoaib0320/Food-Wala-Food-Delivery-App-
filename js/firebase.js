@@ -33,17 +33,15 @@ import {
   deleteDoc,
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
-
-// Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAI5-nS54BZLVqBQvp_vzyYPTnC2IoYekM",
-  authDomain: "foodiez-food-delivery-app.firebaseapp.com",
-  projectId: "foodiez-food-delivery-app",
-  storageBucket: "foodiez-food-delivery-app.appspot.com",
-  messagingSenderId: "1013044152723",
-  appId: "1:1013044152723:web:239e21197cbd64b9684066",
-  measurementId: "G-SGR5NTZJFY"
+  apiKey: "AIzaSyD3hrvhnZX4puogx1mad8ri1LXnFA6jhTM",
+  authDomain: "food-wala-food-delivery-app.firebaseapp.com",
+  projectId: "food-wala-food-delivery-app",
+  storageBucket: "food-wala-food-delivery-app.appspot.com",
+  messagingSenderId: "295273858722",
+  appId: "1:295273858722:web:eb069d8c1484a902e839fb",
+  measurementId: "G-L8Z5Z35LR5"
 };
 
 const app = initializeApp(firebaseConfig);
